@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none';
+      img-src 'self' data:;
+      script-src 'self';
+      style-src 'self';
+      connect-src 'self' https://%domainName%;
+      font-src 'self' data:;"
+    />
+    <title>JavaScript Basic</title>
+    <link rel="stylesheet" href="/modal.css" />
+    <script type="text/javascript" src="/crypto-js/crypto-js.js"></script>
+    <script defer src="/babel-polyfill-7.8.3.js"></script>
+    <script type="module" src="/modal.js"></script>
+  </head>
+  <body class="body">
+    <section class="modal">
+      <div class="modal__backdrop">
+        <form class="modal__form">
+          <h1 class="modal__header"></h1>
+          <input
+            type="hidden"
+            name="_csrf"
+            value="%csurfToken%"
+            id="csrfModal"
+          />
+          <div class="modal__fields">
+            <label class="modal__label" for="title"
+              >Title
+              <input
+                class="modal__input"
+                type="text"
+                id="title"
+                autocomplete="off"
+                required
+              />
+            </label>
+            <div class="modal__file file">
+              <div class="file__buttons">
+                <label class="modal__label modal__label_image" for="image"
+                  >Upload image
+                  <input
+                    class="modal__input modal__input_image"
+                    type="file"
+                    id="image"
+                    accept="image/*"
+                  />
+                </label>
+                <button type="button" class="modal__button modal__image-reset">
+                  Reset image
+                </button>
+              </div>
+              <img class="modal__image" src="" alt="" width="150" />
+            </div>
+            <label class="modal__label"
+              >Enter the text from the image
+              <input
+                class="modal__input modal__input_captcha"
+                type="text"
+                name="captchaText"
+                autocomplete="off"
+                required
+              />
+            </label>
+            %captchaData%
+            <label class="modal__label" for="description"
+              >Description
+              <textarea
+                class="modal__input textarea"
+                type="text"
+                id="description"
+                required
+              ></textarea>
+            </label>
+          </div>
+          <div class="modal__buttons">
+            <button class="modal__button modal__button_save" id="saveButton">
+              Save
+            </button>
+            <button
+              type="button"
+              class="modal__button modal__button_cancel"
+              id="cancelButton"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+        <div class="notification">
+          <p class="notification__text"></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+

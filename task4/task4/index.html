@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none';
+      script-src 'self';
+      style-src 'self';
+      connect-src 'self' https://%domainName%;
+      font-src 'self' data:;"
+    />
+    <title>JavaScript Basic</title>
+    <link rel="stylesheet" href="/mainStyles.css" />
+    <script type="text/javascript" src="/crypto-js/crypto-js.js"></script>
+    <script defer src="/babel-polyfill-7.8.3.js"></script>
+    <script type="module" src="/index.js"></script>
+  </head>
+  <body class="body">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main class="main">
+      <form class="form">
+        <input type="hidden" name="_csrf" value="%csurfToken%" id="csrf" />
+        <div class="form__item">
+          <input
+            type="text"
+            name="login"
+            autocomplete="off"
+            class="form__input form__input_login"
+            required
+          />
+          <label class="form__label">E-mail</label>
+        </div>
+        <div class="form__item">
+          <input
+            type="password"
+            name="password"
+            class="form__input form__input_password"
+            required
+          />
+          <label class="form__label">Password</label>
+        </div>
+        <div class="form__item">
+          <input
+            type="text"
+            name="captchaText"
+            class="form__input form__input_captcha"
+            required
+            autocomplete="off"
+          />
+          <label class="form__label">Enter the text from the image</label>
+          %captchaData%
+        </div>
+        <div class="form__buttons buttons">
+          <button class="buttons__button">Log in</button>
+          <button
+            type="button"
+            class="buttons__button buttons__button_registration"
+          >
+            Registration
+          </button>
+        </div>
+      </form>
+      <div class="notification">
+        <p class="notification__text"></p>
+      </div>
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,1 @@
+export const hash = string => CryptoJS.AES.encrypt(string, '').toString();

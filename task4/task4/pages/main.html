@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none';
+      img-src 'self' data:;
+      script-src 'self' 'unsafe-inline';
+      style-src 'self';
+      connect-src 'self' https://%domainName%;
+      font-src 'self' data:;"
+    />
+    <title>JavaScript Basic</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/mainStyles.css" />
+    <script type="text/javascript" src="/crypto-js/crypto-js.js"></script>
+    <script defer src="/babel-polyfill-7.8.3.js"></script>
+    <script type="module" src="/main.js"></script>
+  </head>
+  <body class="body">
+    <div class="body__container">
+    <header class="header">
+      <h1 class="header__name">Your tasks</h1>
+      <div class="header__buttons">
+      <button class="header__button header__button_add">Add new task</button>
+      <button class="header__button header__button_logout">Logout</button>
+      </div>
+    </header>
+    <main class="main tasks">
+      <ul class="tasks__list"></ul>
+      <div class="notification">
+        <p class="notification__text"></p>
+      </div>
+    </main>
+    </div>
+    <footer class="footer">JavaScript Basic</footer>
+  </body>
+</html>
+
